@@ -1,0 +1,91 @@
+GTK dilatory: run GTK+ applications slowly
+
+General Information
+===================
+
+This is a gtk-dilatory, a small debugging utility, which allows to
+experience slow GTK+ applications and delays in event processing.
+
+
+How does it work?
+=================
+
+gtk-dilatory installs a simple GTK+ 2 module, which blocks all your
+GTK+ 2 applications in a cycle:
+- block for 2 sec
+- allow them to run for 200 msec
+
+
+What is the purpose?
+====================
+
+This utility is intended for GTK+ library and program developers. It
+allows to simulate behavior of the application on a slow devices like
+netbooks, PDA or mobile phones.
+
+
+How to use it?
+==============
+
+Simply run your application or environment using:
+
+gtk-dilatory application [ arguments ]
+
+Then heavily test your application.
+
+Typical test case:
+
+Run quickly with your mouse, click somewhere without stopping to move
+your mouse. Repeat it several times. Well written application should
+behave correctly, just like without any dilatory. If the application
+gets bad position of the the click or release, your application or
+library needs fix.
+
+
+How you can fix your application
+================================
+
+If you want to react to mouse click or release, never use
+gdk_window_get_position() in the handler. Use event->x and event->y
+instead. Note that the fix would be a little bit more complicated, as
+each of them uses a different coordinate system. You need to fix
+coordinated origin as well.
+
+
+Background
+==========
+
+This utility was written to discover and fix bugs like
+http://bugzilla.gnome.org/show_bug.cgi?id=529908
+
+
+Project home page
+=================
+
+http://pack.suse.cz/sbrabec/gtk-dilatory
+
+
+License
+=======
+
+Copyright (C) 2009  Stanislav Brabec, Novell, Inc.
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+
+
+Report Bugs
+===========
+
+Report any bugs to Stanislav Brabec <sbrabec@suse.cz>
