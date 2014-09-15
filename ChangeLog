@@ -1,3 +1,8 @@
+2014-09-15  Stanislav Brabec  <sbrabec@oct.suse.cz>
+
+	* Makefile.am, configure.ac: GTK+-3 support.
+	* Version 0.2.
+
 2009-02-24  Stanislav Brabec  <sbrabec@suse.cz>
 
 	* Initial release.

@@ -1,4 +1,4 @@
-moduledir = $(libdir)/gtk-2.0/modules
+moduledir = $(libdir)/$(gtk)/modules
 
 module_LTLIBRARIES = libdilatory.la
 
