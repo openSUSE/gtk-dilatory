@@ -10,8 +10,8 @@ experience slow GTK+ applications and delays in event processing.
 How does it work?
 =================
 
-gtk-dilatory installs a simple GTK+ 2 module, which blocks all your
-GTK+ 2 applications in a cycle:
+gtk-dilatory installs a simple GTK+ 3 or GTK+ 2 module, which blocks
+all your GTK+ applications in a cycle:
 - block for 2 sec
 - allow them to run for 200 msec
 
@@ -62,13 +62,14 @@ http://bugzilla.gnome.org/show_bug.cgi?id=529908
 Project home page
 =================
 
-http://pack.suse.cz/sbrabec/gtk-dilatory
+https://github.com/openSUSE/gtk-dilatory
+ftp://ftp.suse.com/pub/people/sbrabec/gtk-dilatory/index.html
 
 
 License
 =======
 
-Copyright (C) 2009  Stanislav Brabec, Novell, Inc.
+Copyright (C) 2009-2014  Stanislav Brabec, Novell, Inc.
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
